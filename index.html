@@ -14,12 +14,84 @@
     />
 
     <link rel="stylesheet" href="output.css" />
-  </head>
-  <body>
-    <h1 class="text-8xl font-bold underline">Hello world!</h1>
+      <style>
+        body {
+          background: linear-gradient(180deg, #D85B7B, #814C9C);
+          /* background: linear-gradient(180deg, #C2D1F0, #FEADC0); */
+        }
 
-    <i class="fa-solid fa-play"></i>
+        .progressBar {
+          background-color: rgb(255 255 255 / 0.5);
+          border-radius: 5px;
+          cursor: pointer;
+          margin: 10px 0;
+          height: 4px;
+          width: 100%;
+        }
+        .progress{
+          background-color: white;
+          border-radius: 5px;
+          height: 100%;
+          width: 50%;
+          transition: width 0.1s linear;
+        }
+
+        .lyrics {
+          background-color: #D85B7B;
+          height: 400px;
+          border-radius: 20px;
+        }
+
+      </style>
+
+  </head>
+
+  <header class="flex justify-between px-10 py-8 font-mono">
+
+    <i class="fa-solid fa-angle-down text-xl text-white/70 hover:text-white active:text-white/70 focus:outline-none focus:ring focus:ring-white"></i>
+    <h1 class="text-gray-200">Playing suggested song</h1>
+    <i class="fa-solid fa-ellipsis text-white/70 hover:text-white active:text-white/70 focus:outline-none focus:ring focus:ring-white"></i>
+
+  </header>
+
+  <body class="p-6 font-mono">
+    <!-- <i class="fa-solid fa-play"></i> -->
+    <div class="h-auto max-w-lg mx-auto">
+      <img class="h-auto max-w-lg mx-auto rounded-lg shadow-xl justify-center" src="albumart/justRelax_img.jpeg" alt="">
+      <h1 class="text-3xl pt-8 text-white">Just Relax</h1>
+      <h2 class="text-xl pt-2 text-white opacity-40">Purrple Cat</h2>
+      <div class="progressBar">
+        <div class="progress">
+
+        </div>
+        <div class="audio flex justify-center max-w-auto">
+          <audio class="py-4 hidden" controls id="audio-controls">
+            <source src="songs/just_relax.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </div>
+      <div class="flex justify-center m-4 py-8">
+        <i class="fa-solid fa-backward-step text-3xl text-white px-8 pt-2 opacity-25"></i>
+        <i class="fa-solid fa-circle-play text-6xl text-white px-8 hover:font-bold active:text-white/75 focus:outline-none focus:ring focus:ring-white"></i>
+        <i class="fa-solid fa-forward-step text-3xl text-white/75 px-8 pt-2 hover:text-white active:text-white/70 focus:outline-none focus:ring focus:ring-white"></i>
+      </div>
+    </div>  
+
+    <div class="flex justify-between text-xl">
+      <i class="fa-solid fa-display text-white/80 hover:text-white active:text-white/70 focus:outline-none focus:ring focus:ring-white"></i>
+      <i class="fa-solid fa-arrow-up-from-bracket text-white/80 hover:text-white active:text-white/70 focus:outline-none focus:ring focus:ring-white"></i>
+    </div>
+    
+    <div class="lyrics flex justify-between text-xl m-10">
+      <h1 class="text-mono text-white text-2xl m-6">Lyrics</h1>
+      <div class="m-6">
+        <button class="bg-gray-600 opacity-25 rounded-full w-10 h-10"><i class="fa-solid fa-display text-white opacity-80"></i></button>
+        <button class="bg-gray-600 opacity-25 rounded-full w-10 h-10"><i class="fa-solid fa-up-right-and-down-left-from-center text-white opacity-90"></i></button>
+      </div>
+    </div>
 
     <script src="main.js"></script>
   </body>
+
 </html>
